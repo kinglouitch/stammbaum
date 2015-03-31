@@ -14,9 +14,14 @@ public class Person {
 	private LocalDate deathDate;
 	private List<Person> biologicalChildren;
 	private List<Person> adoptedChildren;
+	private List<Marriage> marriages;
 	
 	public Person(Gender gender) {
 		this.gender = gender;
+	}
+	
+	public void marry(Person personToMarry, LocalDate marriageDate) {
+		marriages.add(new Marriage(this, personToMarry, marriageDate));
 	}
 
 	public String getVorname() {
